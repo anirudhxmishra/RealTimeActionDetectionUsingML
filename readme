@@ -1,24 +1,24 @@
-# Action Recognition Using LSTM
 
+# 🎥 **Action Recognition Using LSTM**  
 
--This project is a real-time action recognition system designed to classify 10 distinct actions using LSTM-based neural networks.
--The model processes Mediapipe Holistic keypoints to recognize sequential patterns in human actions.
--Built with scalability in mind, the project can be extended to include more actions in the future.
+A real-time action recognition system leveraging **LSTM-based neural networks** to classify **10 distinct actions**. Powered by **Mediapipe Holistic** for robust keypoint detection and designed with scalability in mind, this project is ready for future enhancements.  
 
+---
 
-Features:
+## ✨ **Features**  
+- **🔟 Action Recognition:** Classifies 10 unique actions in the initial implementation.  
+- **⚡ Real-Time Predictions:** Supports both live and recorded inputs for instant recognition.  
+- **🛠️ Customizable Dataset:** Easily extendable to include new actions.  
+- **🧠 LSTM Model:** Optimized for sequential time-series data such as human motion keypoints.  
+- **🎯 Robust Input Processing:** Utilizes Mediapipe Holistic for consistent feature extraction.  
 
--Supports 10 Actions: Initial implementation recognizes 10 actions.
--Real-Time Recognition: Capable of processing live or recorded input for immediate predictions.
--Customizable Dataset: Dataset structure is easily expandable to accommodate additional actions.
--LSTM-Based Model: Optimized for time-series data like body keypoints.
--Preprocessed Input: Utilizes Mediapipe Holistic for robust and consistent feature extraction.
+---
 
+## 📂 **Dataset Structure**  
 
-Dataset:
+The dataset consists of `.npy` files containing Mediapipe Holistic keypoints for each action. Add new actions by following this simple structure:  
 
--The dataset includes 10 actions, stored as .npy files, each containing Mediapipe Holistic keypoints data. The structure is as follows:
-
+```plaintext
 dataset/  
 ├── action_1/  
 │   ├── file1.npy  
@@ -29,74 +29,71 @@ dataset/
 │   ├── file2.npy  
 │   └── ...  
 └── ...  
--In the future, new actions can be added by expanding this structure and updating the corresponding configurations in the code.
+```
 
+---
 
-Requirements:
+## ⚙️ **Requirements**  
+- **Python 3.7+**  
+- **TensorFlow 2.0+**  
+- **NumPy**  
+- **Mediapipe**  
+- **Matplotlib**  
 
--Python 3.7+
--TensorFlow 2.0+
--NumPy
--Mediapipe
--Matplotlib
+Install dependencies with:  
+```
+pip install tensorflow numpy mediapipe matplotlib
+```
 
+---
 
-Install dependencies using:
+## 🚀 **Usage**  
 
--pip install (Frameworks with Compatible Versions)
+### Step 1: Dataset Preparation  
+Ensure the dataset follows the proper structure and update the `DATA_PATH` variable in the notebook to point to the dataset location.  
 
+### Step 2: Training the Model  
+Train the LSTM model using the provided training cells in the notebook.  
 
-Usage:
+### Step 3: Testing the Model  
+Evaluate performance using the provided test sequences.  
 
--Step 1: Dataset Preparation
-         Ensure the dataset is structured correctly and update the DATA_PATH variable in the notebook with the dataset's location.
+### Step 4: Real-Time Recognition  
+Test live video predictions by running the real-time recognition section in the notebook.  
 
--Step 2: Training the Model
-         Train the LSTM model on the current dataset by running the training cells in the notebook.
+---
 
--Step 3: Testing the Model
-         Evaluate the trained model's performance using the provided test sequences.
+## 🏗️ **Model Architecture**  
+The **LSTM** model is built to handle sequential data with the following layers:  
+- **Input Layer:** Processes Mediapipe Holistic keypoints.  
+- **LSTM Layers:** Captures temporal patterns in the data.  
+- **Dense Layers:** Outputs probabilities for each action.  
 
--Step 4: Real-Time Recognition
-         Run the real-time recognition section in the notebook to test predictions on live video input.
+---
 
+## 📊 **Current Results**  
+- **Actions Recognized:** 10  
+- **Accuracy:** 96%  
+- **Loss:** 0.08  
 
-Model Architecture:
+---
 
--The LSTM model is designed to handle sequential data with the following layers:
+## 🌟 **Future Enhancements**  
+- Expand the dataset to include more actions.  
+- Optimize the model architecture and hyperparameters.  
+- Deploy on mobile/edge devices for low-latency environments.  
+- Integrate **OpenCV** for enhanced live input handling.  
 
--Input Layer: Processes Mediapipe Holistic keypoints.
--LSTM Layers: Learn temporal dependencies in the data.
--Dense Layers: Output probabilities for each action.
+---
 
+## 🤝 **Contributing**  
+Contributions are welcome! 🚀  
+Feel free to:  
+1. Add new actions.  
+2. Improve the code or optimize performance.  
+3. Fork the repository and open a pull request.  
 
-Current Results:
+---
 
--Actions Recognized: 10
--Accuracy: 96%
--Loss: 0.08
-
-
-Future Enhancements:
-
--Increase Action Words: Gradually expand the dataset to include more actions.
--Improve Model Performance: Optimize architecture and hyperparameters.
--Deploy on Mobile/Edge: Adapt for low-latency environments.
--Real-Time Input: Integrate OpenCV for enhanced live input handling.
-
-
-Contributing:
-
--Contributions are welcome! If you'd like to add new actions, improve the code, or optimize performance, feel free to fork the repository and open a pull request.
-
-License:
-
--This project is licensed under the MIT License.
-
-
-
-
-
-
-
-
+## 📜 **License**  
+This project is licensed under the **MIT License**.  

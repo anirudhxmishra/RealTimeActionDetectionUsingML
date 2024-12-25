@@ -1,102 +1,74 @@
+#!/bin/bash
+
 # Action Recognition Using LSTM
+# A real-time action recognition system using LSTM-based neural networks.
 
+echo -e "\e[1;32m###########################################"
+echo -e "#     🎥 Action Recognition Using LSTM     #"
+echo -e "###########################################\e[0m"
 
--This project is a real-time action recognition system designed to classify 10 distinct actions using LSTM-based neural networks.
--The model processes Mediapipe Holistic keypoints to recognize sequential patterns in human actions.
--Built with scalability in mind, the project can be extended to include more actions in the future.
+echo -e "\n\e[1;34m📖 Overview\e[0m"
+echo -e "A real-time action recognition system leveraging \e[1;36mLSTM\e[0m neural networks to classify \e[1;36m10 distinct actions\e[0m."
+echo -e "Powered by Mediapipe Holistic for robust keypoint detection, designed for scalability."
 
+echo -e "\n\e[1;34m✨ Features\e[0m"
+echo -e "  - 🔟 \e[1;33mAction Recognition\e[0m: Recognizes 10 unique actions."
+echo -e "  - ⚡ \e[1;33mReal-Time Predictions\e[0m: Supports live or recorded inputs."
+echo -e "  - 🛠️ \e[1;33mCustomizable Dataset\e[0m: Expandable to include more actions."
+echo -e "  - 🧠 \e[1;33mLSTM Model\e[0m: Optimized for sequential time-series data."
+echo -e "  - 🎯 \e[1;33mRobust Input Processing\e[0m: Powered by Mediapipe Holistic."
 
-Features:
+echo -e "\n\e[1;34m📂 Dataset Structure\e[0m"
+cat <<EOF
+dataset/
+├── action_1/
+│   ├── file1.npy
+│   ├── file2.npy
+│   └── ...
+├── action_2/
+│   ├── file1.npy
+│   ├── file2.npy
+│   └── ...
+└── ...
+EOF
 
--Supports 10 Actions: Initial implementation recognizes 10 actions.
--Real-Time Recognition: Capable of processing live or recorded input for immediate predictions.
--Customizable Dataset: Dataset structure is easily expandable to accommodate additional actions.
--LSTM-Based Model: Optimized for time-series data like body keypoints.
--Preprocessed Input: Utilizes Mediapipe Holistic for robust and consistent feature extraction.
+echo -e "\n\e[1;34m⚙️ Requirements\e[0m"
+echo -e "  - Python 3.7+"
+echo -e "  - TensorFlow 2.0+"
+echo -e "  - NumPy"
+echo -e "  - Mediapipe"
+echo -e "  - Matplotlib"
 
+echo -e "\n\e[1;32mInstall Dependencies\e[0m"
+echo -e "\e[1;33mpip install tensorflow numpy mediapipe matplotlib\e[0m"
 
-Dataset:
+echo -e "\n\e[1;34m🚀 Usage\e[0m"
+echo -e "  1️⃣ \e[1;33mPrepare the Dataset\e[0m: Structure it properly and update DATA_PATH."
+echo -e "  2️⃣ \e[1;33mTrain the Model\e[0m: Run training cells in the notebook."
+echo -e "  3️⃣ \e[1;33mTest the Model\e[0m: Evaluate performance on test sequences."
+echo -e "  4️⃣ \e[1;33mReal-Time Recognition\e[0m: Run live video prediction in the notebook."
 
--The dataset includes 10 actions, stored as .npy files, each containing Mediapipe Holistic keypoints data. The structure is as follows:
+echo -e "\n\e[1;34m🏗️ Model Architecture\e[0m"
+echo -e "  - \e[1;33mInput Layer\e[0m: Processes Mediapipe Holistic keypoints."
+echo -e "  - \e[1;33mLSTM Layers\e[0m: Captures temporal dependencies."
+echo -e "  - \e[1;33mDense Layers\e[0m: Outputs action probabilities."
 
-dataset/  
-├── action_1/  
-│   ├── file1.npy  
-│   ├── file2.npy  
-│   └── ...  
-├── action_2/  
-│   ├── file1.npy  
-│   ├── file2.npy  
-│   └── ...  
-└── ...  
--In the future, new actions can be added by expanding this structure and updating the corresponding configurations in the code.
+echo -e "\n\e[1;34m📊 Current Results\e[0m"
+echo -e "  - \e[1;33mActions Recognized\e[0m: 10"
+echo -e "  - \e[1;33mAccuracy\e[0m: 96%"
+echo -e "  - \e[1;33mLoss\e[0m: 0.08"
 
+echo -e "\n\e[1;34m🌟 Future Enhancements\e[0m"
+echo -e "  - Expand dataset to include more actions."
+echo -e "  - Optimize model architecture and hyperparameters."
+echo -e "  - Deploy on mobile/edge devices for low-latency environments."
+echo -e "  - Integrate OpenCV for better live input handling."
 
-Requirements:
+echo -e "\n\e[1;34m🤝 Contributing\e[0m"
+echo -e "Contributions are welcome! Fork the repository and open a pull request."
 
--Python 3.7+
--TensorFlow 2.0+
--NumPy
--Mediapipe
--Matplotlib
+echo -e "\n\e[1;34m📜 License\e[0m"
+echo -e "This project is licensed under the MIT License."
 
-
-Install dependencies using:
-
--pip install (Frameworks with Compatible Versions)
-
-
-Usage:
-
--Step 1: Dataset Preparation
-         Ensure the dataset is structured correctly and update the DATA_PATH variable in the notebook with the dataset's location.
-
--Step 2: Training the Model
-         Train the LSTM model on the current dataset by running the training cells in the notebook.
-
--Step 3: Testing the Model
-         Evaluate the trained model's performance using the provided test sequences.
-
--Step 4: Real-Time Recognition
-         Run the real-time recognition section in the notebook to test predictions on live video input.
-
-
-Model Architecture:
-
--The LSTM model is designed to handle sequential data with the following layers:
-
--Input Layer: Processes Mediapipe Holistic keypoints.
--LSTM Layers: Learn temporal dependencies in the data.
--Dense Layers: Output probabilities for each action.
-
-
-Current Results:
-
--Actions Recognized: 10
--Accuracy: 96%
--Loss: 0.08
-
-
-Future Enhancements:
-
--Increase Action Words: Gradually expand the dataset to include more actions.
--Improve Model Performance: Optimize architecture and hyperparameters.
--Deploy on Mobile/Edge: Adapt for low-latency environments.
--Real-Time Input: Integrate OpenCV for enhanced live input handling.
-
-
-Contributing:
-
--Contributions are welcome! If you'd like to add new actions, improve the code, or optimize performance, feel free to fork the repository and open a pull request.
-
-License:
-
--This project is licensed under the MIT License.
-
-
-
-
-
-
-
+echo -e "\n\e[1;32mHappy Coding! 🎉\e[0m"
 
